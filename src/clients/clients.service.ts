@@ -1,14 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateClientDto } from './dto/create-client.dto';
 import { clientsDataMock } from './../helpers/databaseMocks/clients';
 import { Client } from './entities/client.entity';
 
 @Injectable()
 export class ClientsService {
-  create(createClientDto: CreateClientDto) {
-    return 'This action adds a new client';
-  }
-
   findAll(): Client[] {
     return clientsDataMock ;
   }
