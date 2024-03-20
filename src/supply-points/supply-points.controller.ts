@@ -6,12 +6,12 @@ export class SupplyPointsController {
   constructor(private readonly supplyPointsService: SupplyPointsService) {}
 
   @Get()
-  findAll() {
+  isClientAllowedToPromotion(@Param('promotionId') promotionId: string = '', @Param('cupsId') cupsId: string) {
     return this.supplyPointsService.findAll();
   }
 
   @Get(':cupsId')
   findClientByCupsId(@Param('cupsId') cupsId: string) {
-    return this.supplyPointsService.findSypplyPointByCupsId(cupsId);
+    return SupplyPointsService.findSupplyPointByCupsId(cupsId);
   }
 }

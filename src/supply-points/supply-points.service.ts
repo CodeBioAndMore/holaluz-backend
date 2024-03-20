@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { supplyPointsDataMock } from './../helpers/databaseMocks/supply-points';
+import { supplyPointsDataMock } from './../utils/databaseMocks/supply-points';
 import { SupplyPoint } from './entities/supply-point.entity';
 
 @Injectable()
@@ -8,8 +8,8 @@ export class SupplyPointsService {
     return supplyPointsDataMock as unknown as SupplyPoint[];
   }
 
-  findSypplyPointByCupsId(cupsId: string) {
+  static findSupplyPointByCupsId(cupsId: string) {
     //This would be done by mongodb: https://www.mongodb.com/docs/manual/reference/method/db.collection.findOne/
-    return supplyPointsDataMock.filter((supplyPoint) => supplyPoint.cups === cupsId);
+    return supplyPointsDataMock.filter((supplyPoint) => supplyPoint.cups === cupsId)[0];
   }
 }

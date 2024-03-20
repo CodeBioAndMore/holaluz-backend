@@ -14,7 +14,7 @@ export class SupplyPoint {
     invoiced_amount: number;
   
     @Column({ type: 'jsonb', nullable: true })
-    power: { p1: string, p2: string };
+    power: { p1: number, p2: number };
   
     @Column('simple-array')
     neighbors: string[];
